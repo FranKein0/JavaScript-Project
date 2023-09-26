@@ -20,10 +20,13 @@ while (continuar) {
   verificarRendimientoPlaca();
   let respuesta = prompt("¿Quieres verificar otra placa de video? (Sí/No)");
 
-  if (respuesta.toLowerCase() !== "no") {
-    continuar = respuesta.toLowerCase() === "si";
-    if (!continuar) {
-      alert("Gracias por utilizar nuestra aplicación!");
+  if (respuesta.toLowerCase() === "si") {
+    continuar = true;
+  } else if(respuesta.toLowerCase() === "no") {
+      alert ("Gracias por utilizar nuestra aplicacion!");
+      continuar=false
+    } else {
+      alert ("Coloque una opcion valida")
     }
   }
-}
+
