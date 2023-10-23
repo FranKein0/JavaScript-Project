@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+body {
+    background-image: url(../img/fondojs.jpg);
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    margin: 150px;
+    margin-left: 23%;
+}
+
+.fondoborroso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    height: 200px;
+    margin: 50px;
+    background-color: #70be8181;
+    border-radius: 5%;
+}
+.resultado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    height: 300px;
+    background-color: #70be8181;
+    border-radius: 5%;
+    margin-left: 33%;
+    margin-top: -100px;
+}
+
+div p {
+    margin-top: 5px;
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+.botoncomp {
+    background-color: #154415;
+    color: white;
+}

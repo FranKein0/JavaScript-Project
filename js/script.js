@@ -37,30 +37,66 @@ function buscarPlacaAleatoria() {
 }
 
 // Función para verificar el rendimiento de una placa de video
-function verificarRendimientoPlaca() {
-  let nombrePlaca = prompt("Ingresa el nombre de tu placa de video:");
+// function verificarRendimientoPlaca() {
+//   let nombrePlaca = prompt("Ingresa el nombre de tu placa de video:");
 
-  const placaEncontrada = placasDeVideo.find(placa => placa.nombre.toLowerCase() === nombrePlaca.toLowerCase());
+//   const placaEncontrada = placasDeVideo.find(placa => placa.nombre.toLowerCase() === nombrePlaca.toLowerCase());
 
-  if (placaEncontrada) {
-    alert("El rendimiento de tu " + placaEncontrada.nombre + " es de " + placaEncontrada.rendimiento + " puntos.");
-  } else {
-    alert("No encontramos información para esa placa de video. Verifica el nombre.");
+//   if (placaEncontrada) {
+//     alert("El rendimiento de tu " + placaEncontrada.nombre + " es de " + placaEncontrada.rendimiento + " puntos.");
+//   } else {
+//     alert("No encontramos información para esa placa de video. Verifica el nombre.");
+//   }
+// }
+
+// codigo viejo ENTREGA 2
+
+// let continuar = true;
+
+// while (continuar) {
+//   verificarRendimientoPlaca();
+//   let respuesta = prompt("¿Quieres verificar otra placa de video? (Sí/No)");
+
+//   if (respuesta.toLowerCase() === "si") {
+//     continuar = true;
+//   } else if (respuesta.toLowerCase() === "no") {
+//     alert("Gracias por utilizar nuestra aplicación!");
+//     continuar = false;
+//   } else {
+//     alert("Coloca una opción válida");
+//   }
+// }
+
+
+// Función para comparar las placas seleccionadas
+function compararPlacas() {
+  const selectPlacas1 = document.getElementById("placas1");
+  const selectPlacas2 = document.getElementById("placas2");
+  const placa1Nombre = selectPlacas1.value;
+  const placa2Nombre = selectPlacas2.value;
+
+  const placa1 = placasDeVideo.find(placa => placa.nombre === placa1Nombre);
+  const placa2 = placasDeVideo.find(placa => placa.nombre === placa2Nombre);
+
+  if (placa1 && placa2) {
+      const resultadoDiv = document.querySelector(".resultado");
+      resultadoDiv.innerHTML = `
+          <p>Rendimiento:</p>
+          <ul>
+              <li>${placa1.nombre}: ${placa1.rendimiento} puntos</li>
+              <li>${placa2.nombre}: ${placa2.rendimiento} puntos</li>
+          </ul>
+          <p>Memoria RAM:</p>
+          <ul>
+              <li>${placa1.nombre}: ${placa1.memoriaRAM}</li>
+              <li>${placa2.nombre}: ${placa2.memoriaRAM}</li>
+          </ul>
+          <p>Núcleos:</p>
+          <ul>
+              <li>${placa1.nombre}: ${placa1.nucleos}</li>
+              <li>${placa2.nombre}: ${placa2.nucleos}</li>
+          </ul>
+      `;
   }
 }
 
-let continuar = true;
-
-while (continuar) {
-  verificarRendimientoPlaca();
-  let respuesta = prompt("¿Quieres verificar otra placa de video? (Sí/No)");
-
-  if (respuesta.toLowerCase() === "si") {
-    continuar = true;
-  } else if (respuesta.toLowerCase() === "no") {
-    alert("Gracias por utilizar nuestra aplicación!");
-    continuar = false;
-  } else {
-    alert("Coloca una opción válida");
-  }
-}
