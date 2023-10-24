@@ -68,35 +68,39 @@ function buscarPlacaAleatoria() {
 // }
 
 
-// Función para comparar las placas seleccionadas
+// Función para comparar las placas ingresadas
 function compararPlacas() {
-  const selectPlacas1 = document.getElementById("placas1");
-  const selectPlacas2 = document.getElementById("placas2");
-  const placa1Nombre = selectPlacas1.value;
-  const placa2Nombre = selectPlacas2.value;
+  const placa1Nombre = document.getElementById("placa1Input").value;
+  const placa2Nombre = document.getElementById("placa2Input").value;
 
   const placa1 = placasDeVideo.find(placa => placa.nombre === placa1Nombre);
   const placa2 = placasDeVideo.find(placa => placa.nombre === placa2Nombre);
 
   if (placa1 && placa2) {
-      const resultadoDiv = document.querySelector(".resultado");
-      resultadoDiv.innerHTML = `
-          <p>Rendimiento:</p>
-          <ul>
-              <li>${placa1.nombre}: ${placa1.rendimiento} puntos</li>
-              <li>${placa2.nombre}: ${placa2.rendimiento} puntos</li>
-          </ul>
-          <p>Memoria RAM:</p>
-          <ul>
-              <li>${placa1.nombre}: ${placa1.memoriaRAM}</li>
-              <li>${placa2.nombre}: ${placa2.memoriaRAM}</li>
-          </ul>
-          <p>Núcleos:</p>
-          <ul>
-              <li>${placa1.nombre}: ${placa1.nucleos}</li>
-              <li>${placa2.nombre}: ${placa2.nucleos}</li>
-          </ul>
-      `;
+    const resultadoDiv = document.getElementById("resultadoComparacion");
+    resultadoDiv.innerHTML = `
+      <p>Rendimiento:</p>
+      <ul>
+          <li>${placa1.nombre}: ${placa1.rendimiento} puntos</li>
+          <li>${placa2.nombre}: ${placa2.rendimiento} puntos</li>
+      </ul>
+      <p>Memoria RAM:</p>
+      <ul>
+          <li>${placa1.nombre}: ${placa1.memoriaRAM}</li>
+          <li>${placa2.nombre}: ${placa2.memoriaRAM}</li>
+      </ul>
+      <p>Núcleos:</p>
+      <ul>
+          <li>${placa1.nombre}: ${placa1.nucleos}</li>
+          <li>${placa2.nombre}: ${placa2.nucleos}</li>
+      </ul>
+    `;
   }
 }
+
+// evento de click al botón "Comparar"
+const compararBtn = document.getElementById("compararBtn");
+compararBtn.addEventListener("click", compararPlacas);
+
+
 

@@ -6,8 +6,6 @@
     <title>Comparador de Placas de Video</title>
     <!-- Link CSS -->
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Link JS -->
-    <script src="script.js"></script>
 </head>
 <body>
     <main>
@@ -18,40 +16,23 @@
                     <p>Selecciona una placa de video:</p>
                 </article>
                 <div>
-                    <select id="placas1">
-                        <option value="nvidiaGPU1">NVIDIA GeForce RTX 3090</option>
-                        <option value="nvidiaGPU2">NVIDIA GeForce GTX 1660 Ti</option>
-                        <option value="nvidiaGPU3">NVIDIA Quadro P5000</option>
-                        <option value="nvidiaGPU4">NVIDIA GeForce RTX 2080 Super</option>
-                        <option value="nvidiaGPU5">NVIDIA GeForce GTX 1050</option>
-                        <option value="amdGPU1">AMD Radeon RX 6900 XT</option>
-                        <option value="amdGPU2">AMD Radeon RX 5700 XT</option>
-                        <option value="amdGPU3">AMD Radeon RX 6800</option>
-                        <option value="amdGPU4">AMD Radeon RX 5600 XT</option>
-                        <option value="amdGPU5">AMD Radeon RX 5500</option>
-                    </select>
+                    <label for="placa1Input">Placa 1:</label>
+                    <input type="text" id="placa1Input" placeholder="Nombre de la placa 1">
                 </div>
             </div>
             <!-- boton comparacion -->
-            <div> <button class="botoncomp" onclick="compararPlacas()">Comparar</button> </div>
+            <div>
+                <button class="botoncomp" id="compararBtn">Comparar</button>
+            </div>
             <!-- Lista de placas 2 -->
             <div class="fondoborroso">
                 <article class="titulo2">
                     <p>Selecciona otra para comparar:</p>
                 </article>
                 <div>
-                    <select id="placas2">
-                        <option value="nvidiaGPU1">NVIDIA GeForce RTX 3090</option>
-                        <option value="nvidiaGPU2">NVIDIA GeForce GTX 1660 Ti</option>
-                        <option value="nvidiaGPU3">NVIDIA Quadro P5000</option>
-                        <option value="nvidiaGPU4">NVIDIA GeForce RTX 2080 Super</option>
-                        <option value="nvidiaGPU5">NVIDIA GeForce GTX 1050</option>
-                        <option value="amdGPU1">AMD Radeon RX 6900 XT</option>
-                        <option value="amdGPU2">AMD Radeon RX 5700 XT</option>
-                        <option value="amdGPU3">AMD Radeon RX 6800</option>
-                        <option value="amdGPU4">AMD Radeon RX 5600 XT</option>
-                        <option value="amdGPU5">AMD Radeon RX 5500</option>
-                    </select>
+                    <label for="placa2Input">Placa 2:</label>
+                    <input type="text" id="placa2Input" placeholder="Nombre de la placa 2">
+                </div>
                 </div>
             </div>
         </section>
@@ -60,5 +41,7 @@
             <div id="resultadoComparacion"></div>
         </div>
     </main>
+<!-- Link JS -->
+    <script src="script.js"></script>   
 </body>
 </html>
