@@ -1,50 +1,70 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: 0;
+    box-sizing: border-box;
 }
 
 body {
     background-image: url(../img/fondojs.jpg);
 }
 
-section {
+main {
     display: flex;
-    flex-direction: row;
-    margin: 150px;
-    margin-left: 23%;
+    justify-content: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .fondoborroso {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 400px;
-    height: 200px;
-    margin: 50px;
+    padding: 10px;
     background-color: #70be8181;
     border-radius: 5%;
-}
-.resultado {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 600px;
-    height: 300px;
-    background-color: #70be8181;
-    border-radius: 5%;
-    margin-left: 33%;
-    margin-top: -100px;
+    overflow: hidden;
 }
 
-div p {
-    margin-top: 5px;
+.fondoborroso img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Estilos de hover y animaciones */
+.fondoborroso:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+.fondoborroso:hover {
+    background-color: black;
+}
+.fondoborroso:hover p {
     color: aliceblue;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
 }
 
-.botoncomp {
-    background-color: #154415;
-    color: white;
+p { color: rgb(0, 0, 0);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+.comparacion {
+    display: flex;
+    background-color: #fffcfc; 
+    color: white;
+    padding: 10px; 
+    margin-top: 20px; 
+    border: 1px solid #555; 
+    border-radius: 5px;
+    width: 80%; 
+    margin: 0 auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    justify-content: center;
+}
+

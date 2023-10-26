@@ -68,39 +68,52 @@ function buscarPlacaAleatoria() {
 // }
 
 
-// Función para comparar las placas ingresadas
-function compararPlacas() {
-  const placa1Nombre = document.getElementById("placa1Input").value;
-  const placa2Nombre = document.getElementById("placa2Input").value;
+// Variables para llevar un registro de las placas seleccionadas por el usuario
+let placaSeleccionada1 = null;
+let placaSeleccionada2 = null;
 
-  const placa1 = placasDeVideo.find(placa => placa.nombre === placa1Nombre);
-  const placa2 = placasDeVideo.find(placa => placa.nombre === placa2Nombre);
-
-  if (placa1 && placa2) {
-    const resultadoDiv = document.getElementById("resultadoComparacion");
-    resultadoDiv.innerHTML = `
-      <p>Rendimiento:</p>
-      <ul>
-          <li>${placa1.nombre}: ${placa1.rendimiento} puntos</li>
-          <li>${placa2.nombre}: ${placa2.rendimiento} puntos</li>
-      </ul>
-      <p>Memoria RAM:</p>
-      <ul>
-          <li>${placa1.nombre}: ${placa1.memoriaRAM}</li>
-          <li>${placa2.nombre}: ${placa2.memoriaRAM}</li>
-      </ul>
-      <p>Núcleos:</p>
-      <ul>
-          <li>${placa1.nombre}: ${placa1.nucleos}</li>
-          <li>${placa2.nombre}: ${placa2.nucleos}</li>
-      </ul>
-    `;
+// Función para manejar el clic en las imágenes
+function seleccionarPlaca(placa) {
+  if (!placaSeleccionada1) {
+    placaSeleccionada1 = placa;
+  } else if (!placaSeleccionada2) {
+    placaSeleccionada2 = placa;
+    compararPlacas(); // Llamar a la función de comparación
   }
 }
 
-// evento de click al botón "Comparar"
-const compararBtn = document.getElementById("compararBtn");
-compararBtn.addEventListener("click", compararPlacas);
+// Función para comparar dos placas de video
+function compararPlacas() {
+  if (placaSeleccionada1 && placaSeleccionada2) {
+    // Obtener las estadísticas de rendimiento de las placas seleccionadas
+    const rendimiento1 = placaSeleccionada1.rendimiento;
+    const rendimiento2 = placaSeleccionada2.rendimiento;
+
+    // Crear un nuevo div para mostrar los resultados de la comparación
+    const comparacionDiv = document.createElement("div");
+    comparacionDiv.classList.add("comparacion");
+
+    // Calcular y mostrar los resultados
+    const resultado = document.createElement("p");
+    resultado.textContent = `Comparación de rendimiento:
+      ${placaSeleccionada1.nombre} (${rendimiento1} puntos) vs. 
+      ${placaSeleccionada2.nombre} (${rendimiento2} puntos)`;
+
+    // Agregar el resultado de la comparación al documento
+    comparacionDiv.appendChild(resultado);
+    document.body.appendChild(comparacionDiv);
+  }
+}
+
+// Agregar eventos de clic a las imágenes
+const imagenes = document.querySelectorAll(".fondoborroso img");
+imagenes.forEach((imagen, index) => {
+  imagen.addEventListener("click", () => {
+    const placa = placasDeVideo[index];
+    seleccionarPlaca(placa);
+  });
+});
+
 
 
 
