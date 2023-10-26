@@ -89,6 +89,16 @@ function compararPlacas() {
     const rendimiento1 = placaSeleccionada1.rendimiento;
     const rendimiento2 = placaSeleccionada2.rendimiento;
 
+// Crear un objeto JSON con los detalles de la comparación
+    const comparacionData = {
+      placa1: placaSeleccionada1,
+      placa2: placaSeleccionada2,
+      resultado: `Comparación de rendimiento: ${placaSeleccionada1.nombre} (${rendimiento1} puntos) vs. ${placaSeleccionada2.nombre} (${rendimiento2} puntos)`
+    };
+
+    // Guardar los detalles en LocalStorage
+    localStorage.setItem('comparacion', JSON.stringify(comparacionData));
+
     // Crear un nuevo div para mostrar los resultados de la comparación
     const comparacionDiv = document.createElement("div");
     comparacionDiv.classList.add("comparacion");
