@@ -128,6 +128,23 @@ imagenes.forEach((imagen, index) => {
   });
 });
 
+function mostrarComparacionGuardada() {
+  const comparacionData = localStorage.getItem('comparacion');
+  if (comparacionData) {
+    const comparacion = JSON.parse(comparacionData);
+
+    const comparacionDiv = document.createElement("div");
+    comparacionDiv.classList.add("comparacion");
+    const resultado = document.createElement("p");
+    resultado.textContent = comparacion.resultado;
+    comparacionDiv.appendChild(resultado);
+    document.body.appendChild(comparacionDiv);
+  }
+}
+
+// Llama a esta función al cargar la página para mostrar la comparación almacenada
+mostrarComparacionGuardada();
+
 
 
 
