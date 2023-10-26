@@ -102,6 +102,10 @@ function compararPlacas() {
     // Agregar el resultado de la comparación al documento
     comparacionDiv.appendChild(resultado);
     document.body.appendChild(comparacionDiv);
+
+    // Restablecer las variables para permitir nuevas comparaciones
+    placaSeleccionada1 = null;
+    placaSeleccionada2 = null;
   }
 }
 
