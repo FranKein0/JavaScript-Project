@@ -1,0 +1,82 @@
+[
+    {
+      "placaDeVideo": "NVIDIA GeForce RTX 3090",
+      "rendimiento": "87",
+      "ram": "24",
+      "nucleos": "10496",
+      "lanzamiento": "2020",
+      "precio": "$499"
+    },
+    {
+      "placaDeVideo": "NVIDIA GeForce GTX 1660 Ti",
+      "rendimiento": "55",
+      "ram": "6",
+      "nucleos": "1536",
+      "lanzamiento": "2019",
+      "precio": "$699"
+    },
+    {
+      "placaDeVideo": "NVIDIA Quadro P5000",
+      "rendimiento": "68",
+      "ram": "16",
+      "nucleos": "2560",
+      "lanzamiento": "2016",
+      "precio": "$399"
+    },
+    {
+      "placaDeVideo": "NVIDIA GeForce RTX 2080 Super",
+      "rendimiento": "77",
+      "ram": "8",
+      "nucleos": "3072",
+      "lanzamiento": "2019",
+      "precio": "$279"
+    },
+    {
+      "placaDeVideo": "NVIDIA GeForce GTX 1050",
+      "rendimiento": "63",
+      "ram": "4",
+      "nucleos": "1408",
+      "lanzamiento": "2018",
+      "precio": "$499"
+    },
+    {
+      "placaDeVideo": "AMD Radeon RX 6900 XT",
+      "rendimiento": "88",
+      "ram": "16",
+      "nucleos": "5120",
+      "lanzamiento": "2020",
+      "precio": "$279"
+    },
+    {
+      "placaDeVideo": "AMD Radeon RX 5700 XT",
+      "rendimiento": "69",
+      "ram": "8",
+      "nucleos": "2560",
+      "lanzamiento": "2019",
+      "precio": "$139"
+    },
+    {
+      "placaDeVideo": "AMD Radeon RX 6800",
+      "rendimiento": "82",
+      "ram": "16",
+      "nucleos": "3840",
+      "lanzamiento": "2021",
+      "precio": "$329"
+    },
+    {
+      "placaDeVideo": "AMD Radeon RX 5600 XT",
+      "rendimiento": "75",
+      "ram": "6",
+      "nucleos": "2304",
+      "lanzamiento": "2020",
+      "precio": "$649"
+    },
+    {
+      "placaDeVideo": "AMD Radeon RX 5500",
+      "rendimiento": "60",
+      "ram": "4",
+      "nucleos": "1408",
+      "lanzamiento": "2019",
+      "precio": "$229"
+    }
+  ]
