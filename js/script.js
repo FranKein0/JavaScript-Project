@@ -1,6 +1,3 @@
-// Import para que funcione Toastify
-import Toastify from 'toastify-js';
-
 // Función para cargar el archivo JSON
 fetch('api.json')
 .then(response => response.json())
@@ -31,7 +28,8 @@ fetch('api.json')
     });
 
 
-    // Función para comparar dos placas de video y mostrar la notificación con Toastify
+    
+    // Función para comparar dos placas de video y mostrar una alerta con SweetAlert
 function compararPlacas() {
     if (placaSeleccionada1 && placaSeleccionada2) {
         const rendimiento1 = placaSeleccionada1.rendimiento;
@@ -45,41 +43,29 @@ function compararPlacas() {
         const lanzamiento1 = placaSeleccionada1.lanzamiento;
         const lanzamiento2 = placaSeleccionada2.lanzamiento;
 
-        const comparacionMensaje = `Comparación de rendimiento:
-            ${placaSeleccionada1.placaDeVideo} (${rendimiento1} puntos, ${nucleos1} núcleos, ${ram1} RAM, ${precio1} USD, ${lanzamiento1}) vs. 
-            ${placaSeleccionada2.placaDeVideo} (${rendimiento2} puntos, ${nucleos2} núcleos, ${ram2} RAM, ${precio2} USD, ${lanzamiento2})`;
+        const comparacionData = {
+            placa1: placaSeleccionada1,
+            placa2: placaSeleccionada2,
+            resultado: `Comparación de rendimiento:
+                ${placaSeleccionada1.placaDeVideo} (${rendimiento1} puntos, ${nucleos1} núcleos, ${ram1} RAM, ${precio1} USD, ${lanzamiento1}) vs. 
+                ${placaSeleccionada2.placaDeVideo} (${rendimiento2} puntos, ${nucleos2} núcleos, ${ram2} RAM, ${precio2} USD, ${lanzamiento2})`
+        };
 
-        // Mostrar la notificación de Toastify
-        Toastify({
-            text: comparacionMensaje,
-            duration: 5000, // Duración de la notificación en milisegundos (5 segundos en este caso)
-        }).showToast();
+        // Utiliza SweetAlert para mostrar la comparación en una alerta
+        Swal.fire({
+            title: 'Comparación de Placas de Video',
+            html: comparacionData.resultado,
+            icon: 'info',
+        });
 
         placaSeleccionada1 = null;
         placaSeleccionada2 = null;
     }
 }
-
-    function mostrarComparacionGuardada() {
-        const comparacionData = localStorage.getItem('comparacion');
-        if (comparacionData) {
-            const comparacion = JSON.parse(comparacionData);
-
-            const comparacionDiv = document.createElement("div");
-            comparacionDiv.classList.add("comparacion");
-            const resultado = document.createElement("p");
-            resultado.textContent = comparacion.resultado;
-            comparacionDiv.appendChild(resultado);
-            document.body.appendChild(comparacionDiv);
-        }
-    }
-
-    mostrarComparacionGuardada();
 })
 .catch(error => {
     console.error('Error al cargar el archivo JSON', error);
 });
-
 
 
 

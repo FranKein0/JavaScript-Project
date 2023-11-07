@@ -72,11 +72,19 @@
       "precio": "$649"
     },
     {
-      "placaDeVideo": "AMD Radeon RX 5500",
-      "rendimiento": "60",
-      "ram": "4",
-      "nucleos": "1408",
-      "lanzamiento": "2019",
-      "precio": "$229"
+      "placaDeVideo": "AMD RX VEGA 56",
+      "rendimiento": "92",
+      "ram": "8",
+      "nucleos": "2610",
+      "lanzamiento": "2017",
+      "precio": "$300"
+    },
+    {
+      "placaDeVideo": "NVIDIA GeForce RTX 3080 ti",
+      "rendimiento": "86",
+      "ram": "12",
+      "nucleos": "10240",
+      "lanzamiento": "2020",
+      "precio": "$420"
     }
   ]
