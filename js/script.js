@@ -51,6 +51,16 @@ function compararPlacas() {
                 ${placaSeleccionada2.placaDeVideo} (${rendimiento2} puntos, ${nucleos2} núcleos, ${ram2} RAM, ${precio2} USD, ${lanzamiento2})`
         };
 
+        // Guardar datos en localStorage
+        const comparacionGuardada = {
+            placa1: placaSeleccionada1.placaDeVideo,
+            placa2: placaSeleccionada2.placaDeVideo,
+            resultado: comparacionData.resultado
+        };
+
+        // Convertir a cadena JSON y guardar en localStorage
+        localStorage.setItem('comparacionGuardada', JSON.stringify(comparacionGuardada));
+
         // Utiliza SweetAlert para mostrar la comparación en una alerta
         Swal.fire({
             title: 'Comparación de Placas de Video',
